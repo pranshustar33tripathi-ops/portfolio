@@ -406,21 +406,11 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Achievements & Memories
           </div>
-          <div class="gallery-shell">
-            <div class="gallery-grid">
-              <div class="gallery-item">
-                <img src="./certificate_python.jpg" alt="Python Certificate" class="gallery-img" loading="lazy" />
-              </div>
-              <div class="gallery-item">
-                <img src="./robotics.jpg" alt="Robotics Achievement" class="gallery-img" loading="lazy" />
-              </div>
-              <div class="gallery-item">
-                <img src="./sports_medal.jpg" alt="Sports Medal" class="gallery-img" loading="lazy" />
-              </div>
-              <div class="gallery-item">
-                <img src="./student-of-year.jpg" alt="Student of the Year" class="gallery-img" loading="lazy" />
-              </div>
-            </div>
+          <div style="padding: 1rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+            <img src="./certificate_python.jpg" alt="Python Certificate" style="width: 100%; border-radius: 4px; object-fit: cover;" />
+            <img src="./robotics.jpg" alt="Robotics Achievement" style="width: 100%; border-radius: 4px; object-fit: cover;" />
+            <img src="./sports_medal.jpg" alt="Sports Medal" style="width: 100%; border-radius: 4px; object-fit: cover;" />
+            <img src="./student-of-year.jpg" alt="Student of the Year" style="width: 100%; border-radius: 4px; object-fit: cover;" />
           </div>
           <p class="media-caption mono">// Certificates, achievements, and memories that shaped the journey.</p>
         </div>
@@ -428,36 +418,72 @@
       </div>
     </section>
 
-<!-- achievements section -->
-<section id="achievements" class="achievements section">
-  <div class="section-eyebrow mono">// 06 — achievements.md</div>
-  <h2 class="section-title">Achievements<span class="dot-accent">.</span></h2>
-  <p class="section-sub">Recognition earned, not collected.</p>
 
-  <div class="ach-stat-strip">
-    <div class="ach-stat"><span class="ach-sn">1st</span><span class="ach-sl mono">Student of Year</span></div>
-    <div class="ach-stat"><span class="ach-sn">1st</span><span class="ach-sl mono">Technical Award</span></div>
-    <div class="ach-stat"><span class="ach-sn">3+</span><span class="ach-sl mono">Certifications</span></div>
-    <div class="ach-stat"><span class="ach-sn">5+</span><span class="ach-sl mono">Sports Medals</span></div>
-  </div>
+    <!-- ═══════════════════════════════════════
+         06. ACHIEVEMENTS
+    ═══════════════════════════════════════ -->
+    <section id="achievements" class="achievements section">
+      <div class="section-eyebrow mono">// 06 — achievements.md</div>
+      <h2 class="section-title">Achievements<span class="dot-accent">.</span></h2>
+      <p class="section-sub">Recognition earned, not collected.</p>
 
-  <div class="ach-timeline">
-    <!-- repeat tl-item for each achievement -->
-    <div class="tl-item">
-      <div class="tl-dot"><div class="tl-dot-ring"></div></div>
-      <div class="tl-card">
-        <div class="tl-content">
-          <span class="tl-tag academic">Academic</span>
-          <h3>Student of the Year</h3>
-          <p class="tl-org mono">DAV College · 12th Grade</p>
-          <p class="tl-desc">...</p>
+      <div class="ach-grid">
+
+        <div class="ach-card ach-academic">
+          <div class="ach-img-wrap">
+            <img src="" alt="Student of the Year Certificate" class="ach-img"/>
+            <div class="ach-img-placeholder mono">🖼 Add certificate image</div>
+          </div>
+          <div class="ach-body">
+            <span class="ach-tag">Academic</span>
+            <h3>Student of the Year</h3>
+            <p class="ach-org mono">DAV College · 12th Grade</p>
+            <p class="ach-desc">Recognized for academic excellence, leadership, and overall contribution to the school community.</p>
+          </div>
         </div>
-        <div class="tl-icon-side">🎓</div>
+
+        <div class="ach-card ach-tech">
+          <div class="ach-img-wrap">
+            <img src="" alt="Best Technical Award" class="ach-img"/>
+            <div class="ach-img-placeholder mono">🖼 Add award image</div>
+          </div>
+          <div class="ach-body">
+            <span class="ach-tag">Robotics</span>
+            <h3>Best Technical Award</h3>
+            <p class="ach-org mono">Robotics Competition</p>
+            <p class="ach-desc">Won for innovative design, technical implementation, and problem-solving in a competitive robotics event.</p>
+          </div>
+        </div>
+
+        <div class="ach-card ach-cert">
+          <div class="ach-img-wrap">
+            <img src="" alt="Python Certifications" class="ach-img"/>
+            <div class="ach-img-placeholder mono">🖼 Add cert image</div>
+          </div>
+          <div class="ach-body">
+            <span class="ach-tag">Certification</span>
+            <h3>Python Certifications</h3>
+            <p class="ach-org mono">Multiple Professional Credentials</p>
+            <p class="ach-desc">Completed Python programming, advanced concepts, and best practices across accredited platforms.</p>
+          </div>
+        </div>
+
+        <div class="ach-card ach-sports">
+          <div class="ach-img-wrap">
+            <img src="" alt="Sports Medals" class="ach-img"/>
+            <div class="ach-img-placeholder mono">🖼 Add sports image</div>
+          </div>
+          <div class="ach-body">
+            <span class="ach-tag">Sports</span>
+            <h3>Sports Medals</h3>
+            <p class="ach-org mono">Multiple Competitions</p>
+            <p class="ach-desc">Earned multiple medals across various sports competitions demonstrating athletic excellence.</p>
+          </div>
+        </div>
+
       </div>
-    </div>
-    <!-- ... -->
-  </div>
-</section>
+    </section>
+
 
     <!-- ═══════════════════════════════════════
          07. CONTACT
