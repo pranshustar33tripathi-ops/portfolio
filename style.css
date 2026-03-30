@@ -963,96 +963,123 @@ ul  { list-style: none; }
 }
 
 
-/* ─── 14. ACHIEVEMENTS ─── */
-.ach-grid {
+/* ─────────────────────────────────────────────
+   14. ACHIEVEMENTS & HONOURS
+───────────────────────────────────────────── */
+
+/* Container Grid */
+.ach-stat-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
 }
 
-.ach-card {
+/* Individual Stat Box */
+.ach-stat {
+  background: var(--white);
+  padding: 1.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ach-sn {
+  font-family: var(--font-d);
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+.ach-sl {
+  font-size: 0.6rem;
+  color: var(--dim);
+  letter-spacing: 0.05em;
+}
+
+/* Timeline Container */
+.ach-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ach-timeline::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+/* Timeline Item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Timeline Dot Circle */
+.tl-dot {
+  padding-top: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.tl-dot-ring {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--white);
+  transition: all 0.25s;
+}
+
+.tl-item:hover .tl-dot-ring {
+  border-color: var(--gold);
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(253, 185, 19, 0.15);
+}
+
+/* Timeline Card */
+.tl-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.tl-item:hover .tl-card {
+  border-color: rgba(11, 61, 145, 0.2);
   box-shadow: var(--sh-sm);
-  transition: box-shadow var(--ease), transform var(--ease);
-  position: relative;
 }
-.ach-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
+
+.tl-content {
+  padding: 1.1rem 1.25rem;
 }
-.ach-academic::before { background: linear-gradient(90deg, var(--blue-m), var(--blue-l)); }
-.ach-tech::before     { background: linear-gradient(90deg, var(--red-d), var(--red-l)); }
-.ach-cert::before     { background: linear-gradient(90deg, var(--gold-d), var(--gold-l)); }
-.ach-sports::before   { background: linear-gradient(90deg, var(--blue-l), var(--gold)); }
 
-.ach-card:hover { box-shadow: var(--sh-md); transform: translateY(-4px); }
-
-.ach-img-wrap {
-  position: relative;
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  background: var(--light);
+.tl-icon-side {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--border);
+  background: var(--light);
+  border-left: 1px solid var(--border);
+  font-size: 1.5rem;
 }
-.ach-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.ach-card:hover .ach-img { transform: scale(1.06); }
-.ach-img-placeholder {
-  position: absolute;
-  font-size: 0.68rem;
-  color: var(--dim);
-  text-align: center;
-  padding: 0.5rem;
-  font-style: italic;
-  pointer-events: none;
-}
-/* Hide placeholder when img has src */
-.ach-img[src]:not([src=""]) + .ach-img-placeholder { display: none; }
-
-.ach-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
-.ach-body h3 {
-  font-family: var(--font-d);
-  font-size: 1.1rem;
-  color: var(--ink);
-  letter-spacing: 0.01em;
-}
-.ach-org { font-size: 0.62rem; color: var(--red); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.ach-desc { font-size: 0.79rem; color: var(--muted); line-height: 1.6; flex: 1; }
-
-.ach-tag {
-  display: inline-block;
-  font-family: var(--font-m);
-  font-size: 0.56rem;
-  font-weight: 700;
-  color: var(--blue-d);
-  background: var(--blue-faint);
-  padding: 0.12rem 0.55rem;
-  border-radius: 3px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-  align-self: flex-start;
-}
-.ach-tech .ach-tag  { background: rgba(165,0,68,0.1); color: var(--red-d); }
-.ach-cert .ach-tag  { background: rgba(253,185,19,0.12); color: var(--gold-d); }
-.ach-sports .ach-tag { background: rgba(15,80,196,0.1); color: var(--blue-d); }
 
 
-/* ─── 15. CONTACT ─── */
+/* ─────────────────────────────────────────────
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
